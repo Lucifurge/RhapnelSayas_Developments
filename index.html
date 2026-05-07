@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rhapnel Sayas Developments</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Rhapnel Sayas Developments — Building ideas into reality through code, creativity, and purpose." />
-
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
@@ -27,34 +24,43 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
-      scroll-behavior: smooth;
     }
 
-    a { color: inherit; text-decoration: none; }
-
     section {
-      padding: 100px 20px;
+      padding: 80px 20px;
       max-width: 1100px;
       margin: auto;
     }
 
     h1, h2, h3 { font-weight: 800; }
 
+    /* NAV */
     nav {
       position: fixed;
       top: 0;
       width: 100%;
       display: flex;
       justify-content: space-between;
-      padding: 15px 30px;
-      background: rgba(10,10,10,0.7);
+      align-items: center;
+      padding: 15px 20px;
+      background: rgba(10,10,10,0.8);
       backdrop-filter: blur(10px);
       z-index: 1000;
     }
 
-    nav a { margin-left: 20px; font-size: 0.9rem; color: var(--muted); }
+    .menu {
+      display: flex;
+      gap: 15px;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
     nav a:hover { color: var(--accent); }
 
+    /* HERO */
     .hero {
       height: 100vh;
       display: flex;
@@ -62,102 +68,114 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      position: relative;
-      overflow: hidden;
+      padding: 0 15px;
     }
 
-    .hero h1 { font-size: 4rem; }
+    .hero h1 {
+      font-size: clamp(2.2rem, 8vw, 4rem);
+    }
 
     .typing {
       font-family: 'JetBrains Mono', monospace;
       color: var(--accent);
       margin-top: 10px;
+      font-size: clamp(0.9rem, 4vw, 1.2rem);
     }
 
-    .cursor { display: inline-block; width: 8px; background: var(--accent); margin-left: 3px; animation: blink 1s infinite; }
-    @keyframes blink { 50% { opacity: 0; } }
-
-    canvas {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: -1;
-    }
-
-    h2 { margin-bottom: 20px; }
-
+    /* GRID */
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
     }
 
     .card {
       background: var(--card);
-      padding: 20px;
-      border-radius: 15px;
+      padding: 15px;
+      border-radius: 12px;
       transition: 0.3s;
       border: 1px solid #1f1f1f;
     }
 
     .card:hover {
-      transform: translateY(-10px) scale(1.02);
+      transform: translateY(-6px);
       border-color: var(--accent);
     }
-
-    .card a { display: inline-block; margin-top: 10px; font-size: 0.85rem; color: var(--accent); }
 
     .terminal {
       background: #000;
       border-radius: 10px;
-      padding: 20px;
+      padding: 15px;
       font-family: 'JetBrains Mono', monospace;
-      color: #0f0;
+      font-size: 0.8rem;
+      overflow-x: auto;
     }
 
     .skills span {
       display: inline-block;
       background: #1a1a1a;
-      padding: 10px 15px;
-      margin: 5px;
+      padding: 8px 12px;
+      margin: 4px;
       border-radius: 20px;
-      font-size: 0.85rem;
+      font-size: 0.75rem;
     }
 
     .contact { text-align: center; }
 
     .btn {
       display: inline-block;
-      padding: 12px 25px;
+      padding: 10px 20px;
       background: var(--accent);
       color: #000;
-      border-radius: 30px;
-      font-weight: 600;
-      margin-top: 15px;
+      border-radius: 25px;
+      font-size: 0.9rem;
     }
 
     .socials a {
-      margin: 0 10px;
-      font-size: 0.9rem;
+      display: inline-block;
+      margin: 8px;
+      font-size: 0.85rem;
       color: var(--muted);
     }
 
-    .socials a:hover { color: var(--accent); }
-
     footer {
       text-align: center;
-      padding: 30px;
+      padding: 20px;
+      font-size: 0.75rem;
       color: #666;
-      font-size: 0.8rem;
     }
 
+    /* MOBILE MENU */
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background: #111;
+        padding: 15px;
+        border-radius: 10px;
+      }
+
+      .menu.active { display: flex; }
+
+      .hamburger { display: block; }
+    }
   </style>
 </head>
 <body>
 
   <nav>
     <div><strong>RS Dev</strong></div>
-    <div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="menu" id="menu">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
@@ -166,26 +184,21 @@
   </nav>
 
   <section class="hero">
-    <canvas id="bg"></canvas>
     <h1>Rhapnel Sayas</h1>
     <div class="typing" id="typing"></div>
   </section>
 
   <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I don't just build websites. I build purpose-driven digital experiences.
-      Every line of code I write represents growth, discipline, and vision.
-    </p>
+    <h2>About</h2>
+    <p>I build purposeful digital experiences through code and creativity.</p>
   </section>
 
   <section>
     <h2>Mindset</h2>
     <div class="terminal">
-      > loading purpose...<br>
       > faith + discipline<br>
-      > mission: impact lives<br>
-      > status: evolving daily
+      > mission: impact<br>
+      > status: evolving
     </div>
   </section>
 
@@ -193,38 +206,25 @@
     <h2>Projects</h2>
     <div class="projects-grid">
       <div class="card">
-        <h3>Portfolio Website</h3>
-        <p>Personal brand site.</p>
-        <a href="#">View</a>
+        <h3>Portfolio</h3>
+        <p>Personal brand site</p>
       </div>
       <div class="card">
-        <h3>Sound System Setup</h3>
-        <p>Church audio optimization.</p>
-        <a href="#">View</a>
-      </div>
-      <div class="card">
-        <h3>Upcoming SaaS</h3>
-        <p>Future project.</p>
-        <a href="#">Soon</a>
+        <h3>Sound Setup</h3>
+        <p>Church system</p>
       </div>
     </div>
   </section>
 
   <section id="skills" class="skills">
     <h2>Skills</h2>
-    <span>HTML</span>
-    <span>CSS</span>
-    <span>JavaScript</span>
-    <span>React</span>
-    <span>Node.js</span>
+    <span>HTML</span><span>CSS</span><span>JS</span>
   </section>
 
   <section id="contact" class="contact">
     <h2>Contact</h2>
-    <p>Let's build something impactful together.</p>
-    <a href="mailto:sayasrhapnelrey@gmail.com" class="btn">Email Me</a>
-
-    <div class="socials" style="margin-top:20px;">
+    <a href="mailto:sayasrhapnelrey@gmail.com" class="btn">Email</a>
+    <div class="socials">
       <a href="https://www.facebook.com/Rhapnel.Sayas" target="_blank">Facebook</a>
     </div>
   </section>
@@ -234,49 +234,23 @@
   </footer>
 
   <script>
-    const text = ["Developer", "Creator", "Vision Driven"];
-    let i = 0, j = 0, current = "", isDeleting = false;
-
-    function type() {
-      const el = document.getElementById("typing");
-      if (i < text.length) {
-        if (!isDeleting && j <= text[i].length) current = text[i].substring(0, j++);
-        else if (isDeleting && j >= 0) current = text[i].substring(0, j--);
-
-        if (j === text[i].length) isDeleting = true;
-        if (j === 0) { isDeleting = false; i++; }
-
-        el.innerHTML = current + '<span class="cursor"></span>';
-      } else { i = 0; }
-      setTimeout(type, 100);
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
     }
 
+    const words = ["Developer","Creator","Builder"];
+    let i=0,j=0,current="",del=false;
+
+    function type(){
+      const el=document.getElementById("typing");
+      if(!del && j<=words[i].length) current=words[i].substring(0,j++);
+      else if(del && j>=0) current=words[i].substring(0,j--);
+      if(j===words[i].length) del=true;
+      if(j===0){del=false;i=(i+1)%words.length;}
+      el.innerHTML=current;
+      setTimeout(type,120);
+    }
     type();
-
-    const canvas = document.getElementById("bg");
-    const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    let particles = [];
-    for (let i = 0; i < 60; i++) {
-      particles.push({ x: Math.random()*canvas.width, y: Math.random()*canvas.height, r: Math.random()*2 });
-    }
-
-    function animate() {
-      ctx.clearRect(0,0,canvas.width,canvas.height);
-      ctx.fillStyle = "#00ffae";
-      particles.forEach(p => {
-        ctx.beginPath();
-        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-        ctx.fill();
-        p.y -= 0.3;
-        if (p.y < 0) p.y = canvas.height;
-      });
-      requestAnimationFrame(animate);
-    }
-
-    animate();
   </script>
 
 </body>
