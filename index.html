@@ -19,16 +19,20 @@
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter';background:var(--bg);color:var(--text);overflow-x:hidden}
 
-section{padding:80px 20px;max-width:1100px;margin:auto}
+section{padding:90px 20px;max-width:1100px;margin:auto}
 
+h2{margin-bottom:15px;font-size:1.8rem}
+p{color:var(--muted)}
+
+/* NAV */
 nav{
 position:fixed;width:100%;top:0;
-display:flex;justify-content:space-between;
-padding:15px 20px;background:#000c;z-index:10
+display:flex;justify-content:space-between;align-items:center;
+padding:15px 20px;background:#000c;backdrop-filter:blur(10px);z-index:10
 }
 
-.menu{display:flex;gap:15px}
-nav a{color:var(--muted);font-size:.9rem}
+.menu{display:flex;gap:18px}
+nav a{color:var(--muted);font-size:.9rem;transition:.3s}
 nav a:hover{color:var(--accent)}
 
 .hamburger{display:none;font-size:1.5rem;cursor:pointer}
@@ -39,6 +43,7 @@ nav a:hover{color:var(--accent)}
 .hamburger{display:block}
 }
 
+/* HERO */
 .hero{
 height:100vh;
 display:flex;flex-direction:column;
@@ -47,64 +52,70 @@ text-align:center;
 position:relative;
 }
 
-canvas{
-position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1;
-}
+canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1}
 
-.hero h1{font-size:clamp(2.2rem,8vw,4rem)}
+.hero h1{font-size:clamp(2.5rem,8vw,4.5rem)}
+.typing{color:var(--accent);font-family:'JetBrains Mono';margin-top:10px}
 
-.typing{color:var(--accent);font-family:'JetBrains Mono'}
-
+/* CARDS */
 .projects-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:15px
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px
 }
 
 .card{
-background:var(--card);
-padding:15px;border-radius:12px;
+background:linear-gradient(145deg,#111,#0a0a0a);
+padding:18px;border-radius:14px;
 border:1px solid #222;
 transition:.3s
 }
 
 .card:hover{
-transform:translateY(-6px) scale(1.02);
+transform:translateY(-8px) scale(1.02);
 border-color:var(--accent);
-box-shadow:0 0 15px #00ffae33;
+box-shadow:0 0 20px #00ffae33;
 }
 
+/* TEMPLATE GRID */
+.templates-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:20px
+}
+
+.template-card{
+background:#111;border-radius:12px;overflow:hidden;border:1px solid #222;transition:.3s
+}
+
+.template-card img{width:100%;height:180px;object-fit:cover}
+
+.template-card:hover{
+transform:translateY(-6px);
+border-color:var(--accent);
+box-shadow:0 0 15px #00ffae22;
+}
+
+.template-card div{padding:12px}
+
+/* TERMINAL */
 .terminal{
-background:#000;
-padding:15px;
-border-radius:10px;
-font-family:'JetBrains Mono';
-font-size:.8rem
+background:#000;padding:15px;border-radius:10px;
+font-family:'JetBrains Mono';font-size:.8rem;color:#0f0
 }
 
+/* SKILLS */
 .skills span{
-background:#1a1a1a;
-padding:8px 12px;
-margin:4px;
-border-radius:20px;
-font-size:.75rem
+background:#1a1a1a;padding:8px 14px;margin:5px;border-radius:20px;font-size:.75rem;display:inline-block
 }
 
+/* CONTACT */
+.contact{text-align:center}
 .btn{
-background:var(--accent);
-color:#000;
-padding:10px 20px;
-border-radius:20px;
-display:inline-block;
-margin-top:10px
+background:var(--accent);color:#000;padding:12px 25px;border-radius:25px;display:inline-block;margin-top:15px;font-weight:600
 }
 
-/* SLIDER */
-.slider{overflow:hidden;border-radius:12px}
-.slides{display:flex;transition:.5s}
-.slides img{width:100%;height:220px;object-fit:cover}
-
-footer{text-align:center;padding:20px;color:#666;font-size:.75rem}
+footer{text-align:center;padding:25px;color:#666;font-size:.75rem}
 </style>
 </head>
 
@@ -130,35 +141,48 @@ footer{text-align:center;padding:20px;color:#666;font-size:.75rem}
 
 <section id="about">
 <h2>About Me</h2>
-<p>I build purpose-driven digital experiences through code, creativity, and discipline.</p>
+<p>I design and build clean, modern, and purpose-driven websites that create real impact.</p>
 </section>
 
 <section>
 <h2>Mindset</h2>
 <div class="terminal">
 > faith + discipline<br>
-> mission: impact<br>
-> building daily...
+> code with purpose<br>
+> build. improve. repeat.
 </div>
 </section>
 
 <section id="projects">
 <h2>Projects</h2>
 <div class="projects-grid">
-<div class="card"><h3>Portfolio</h3><p>Personal brand site</p></div>
-<div class="card"><h3>Sound System</h3><p>Church setup</p></div>
-<div class="card"><h3>Future SaaS</h3><p>Coming soon</p></div>
+<div class="card"><h3>Portfolio Website</h3><p>Personal developer brand site</p></div>
+<div class="card"><h3>Church Sound System</h3><p>Audio setup & optimization</p></div>
+<div class="card"><h3>SaaS Idea</h3><p>Upcoming digital product</p></div>
 </div>
 </section>
 
 <section id="templates">
 <h2>Website Templates</h2>
-<div class="slider">
-<div class="slides" id="slides">
-<img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800">
-<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800">
-<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800">
-<img src="https://images.unsplash.com/photo-1484417894907-623942c8ee29?w=800">
+<div class="templates-grid">
+<div class="template-card">
+<img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800">
+<div><strong>Business Website</strong><p>Clean corporate design</p></div>
+</div>
+
+<div class="template-card">
+<img src="https://images.unsplash.com/photo-1547658719-da2b51169166?w=800">
+<div><strong>Portfolio Layout</strong><p>Personal branding site</p></div>
+</div>
+
+<div class="template-card">
+<img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?w=800">
+<div><strong>Startup Landing</strong><p>Modern startup UI</p></div>
+</div>
+
+<div class="template-card">
+<img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800">
+<div><strong>Agency Website</strong><p>Creative agency style</p></div>
 </div>
 </div>
 </section>
@@ -169,8 +193,9 @@ footer{text-align:center;padding:20px;color:#666;font-size:.75rem}
 <span>React</span><span>Node.js</span>
 </section>
 
-<section id="contact" style="text-align:center">
+<section id="contact" class="contact">
 <h2>Contact</h2>
+<p>Let's build something meaningful together.</p>
 <a href="mailto:sayasrhapnelrey@gmail.com" class="btn">Email Me</a>
 <div style="margin-top:10px">
 <a href="https://www.facebook.com/Rhapnel.Sayas" target="_blank">Facebook</a>
@@ -180,12 +205,10 @@ footer{text-align:center;padding:20px;color:#666;font-size:.75rem}
 <footer>© 2026 Rhapnel Sayas Developments</footer>
 
 <script>
-function toggleMenu(){
-document.getElementById('menu').classList.toggle('active')
-}
+function toggleMenu(){document.getElementById('menu').classList.toggle('active')}
 
 // typing
-const words=["Developer","Creator","Builder"];
+const words=["Developer","Creator","Builder","Problem Solver"];
 let i=0,j=0,cur="",del=false;
 function type(){
 let el=document.getElementById("typing");
@@ -194,17 +217,9 @@ else if(del&&j>=0)cur=words[i].substring(0,j--);
 if(j==words[i].length)del=true;
 if(j==0){del=false;i=(i+1)%words.length}
 el.innerHTML=cur;
-setTimeout(type,120);
+setTimeout(type,100);
 }
 type();
-
-// slider
-let index=0;
-const slides=document.getElementById("slides");
-setInterval(()=>{
-index=(index+1)%4;
-slides.style.transform=`translateX(-${index*100}%)`;
-},3000);
 
 // particles
 const canvas=document.getElementById("particles");
@@ -213,7 +228,7 @@ canvas.width=window.innerWidth;
 canvas.height=window.innerHeight;
 
 let particles=[];
-for(let i=0;i<80;i++){
+for(let i=0;i<70;i++){
 particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*2});
 }
 
@@ -224,7 +239,7 @@ particles.forEach(p=>{
 ctx.beginPath();
 ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
 ctx.fill();
-p.y-=0.3;
+p.y-=0.25;
 if(p.y<0)p.y=canvas.height;
 });
 requestAnimationFrame(animate);
