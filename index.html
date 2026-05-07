@@ -7,8 +7,6 @@
 
   <!-- SEO -->
   <meta name="description" content="Rhapnel Sayas Developments — Building ideas into reality through code, creativity, and purpose." />
-  <meta property="og:title" content="Rhapnel Sayas Developments" />
-  <meta property="og:description" content="Portfolio of Rhapnel Sayas — Developer & Creator" />
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -42,7 +40,6 @@
 
     h1, h2, h3 { font-weight: 800; }
 
-    /* NAV */
     nav {
       position: fixed;
       top: 0;
@@ -55,15 +52,9 @@
       z-index: 1000;
     }
 
-    nav a {
-      margin-left: 20px;
-      font-size: 0.9rem;
-      color: var(--muted);
-    }
-
+    nav a { margin-left: 20px; font-size: 0.9rem; color: var(--muted); }
     nav a:hover { color: var(--accent); }
 
-    /* HERO */
     .hero {
       height: 100vh;
       display: flex;
@@ -93,10 +84,8 @@
       z-index: -1;
     }
 
-    /* SECTION TITLE */
     h2 { margin-bottom: 20px; }
 
-    /* PROJECTS */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -116,14 +105,8 @@
       border-color: var(--accent);
     }
 
-    .card a {
-      display: inline-block;
-      margin-top: 10px;
-      font-size: 0.85rem;
-      color: var(--accent);
-    }
+    .card a { display: inline-block; margin-top: 10px; font-size: 0.85rem; color: var(--accent); }
 
-    /* TERMINAL */
     .terminal {
       background: #000;
       border-radius: 10px;
@@ -132,7 +115,6 @@
       color: #0f0;
     }
 
-    /* SKILLS */
     .skills span {
       display: inline-block;
       background: #1a1a1a;
@@ -142,7 +124,6 @@
       font-size: 0.85rem;
     }
 
-    /* CONTACT */
     .contact { text-align: center; }
 
     .btn {
@@ -155,6 +136,14 @@
       margin-top: 15px;
     }
 
+    .socials a {
+      margin: 0 10px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .socials a:hover { color: var(--accent); }
+
     footer {
       text-align: center;
       padding: 30px;
@@ -166,7 +155,6 @@
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
     <div><strong>RS Dev</strong></div>
     <div>
@@ -177,58 +165,51 @@
     </div>
   </nav>
 
-  <!-- HERO -->
   <section class="hero">
     <canvas id="bg"></canvas>
     <h1>Rhapnel Sayas</h1>
     <div class="typing" id="typing"></div>
   </section>
 
-  <!-- ABOUT -->
   <section id="about">
     <h2>About Me</h2>
     <p>
       I don't just build websites. I build purpose-driven digital experiences.
       Every line of code I write represents growth, discipline, and vision.
-      This portfolio is not just work — it's my journey.
     </p>
   </section>
 
-  <!-- TERMINAL -->
   <section>
-    <h2>My Mindset</h2>
+    <h2>Mindset</h2>
     <div class="terminal">
-      > initializing mindset...<br>
-      > discipline = true<br>
-      > purpose = impact<br>
-      > mission = build + serve<br>
-      > status: evolving
+      > loading purpose...<br>
+      > faith + discipline<br>
+      > mission: impact lives<br>
+      > status: evolving daily
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <section id="projects">
     <h2>Projects</h2>
     <div class="projects-grid">
       <div class="card">
         <h3>Portfolio Website</h3>
-        <p>Personal brand site showcasing creativity and development.</p>
-        <a href="#">View Project</a>
+        <p>Personal brand site.</p>
+        <a href="#">View</a>
       </div>
       <div class="card">
-        <h3>Church Sound System Setup</h3>
-        <p>Configured and optimized live audio system.</p>
-        <a href="#">View Details</a>
+        <h3>Sound System Setup</h3>
+        <p>Church audio optimization.</p>
+        <a href="#">View</a>
       </div>
       <div class="card">
-        <h3>Future SaaS Project</h3>
-        <p>Building scalable digital tools for real-world impact.</p>
-        <a href="#">Coming Soon</a>
+        <h3>Upcoming SaaS</h3>
+        <p>Future project.</p>
+        <a href="#">Soon</a>
       </div>
     </div>
   </section>
 
-  <!-- SKILLS -->
   <section id="skills" class="skills">
     <h2>Skills</h2>
     <span>HTML</span>
@@ -236,14 +217,16 @@
     <span>JavaScript</span>
     <span>React</span>
     <span>Node.js</span>
-    <span>UI/UX</span>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact" class="contact">
     <h2>Contact</h2>
     <p>Let's build something impactful together.</p>
-    <a href="mailto:youremail@gmail.com" class="btn">Email Me</a>
+    <a href="mailto:sayasrhapnelrey@gmail.com" class="btn">Email Me</a>
+
+    <div class="socials" style="margin-top:20px;">
+      <a href="https://www.facebook.com/Rhapnel.Sayas" target="_blank">Facebook</a>
+    </div>
   </section>
 
   <footer>
@@ -251,40 +234,32 @@
   </footer>
 
   <script>
-    // Typing effect
-    const text = ["Developer", "Creator", "Builder", "Vision Driven"];
+    const text = ["Developer", "Creator", "Vision Driven"];
     let i = 0, j = 0, current = "", isDeleting = false;
 
     function type() {
       const el = document.getElementById("typing");
       if (i < text.length) {
-        if (!isDeleting && j <= text[i].length) {
-          current = text[i].substring(0, j++);
-        } else if (isDeleting && j >= 0) {
-          current = text[i].substring(0, j--);
-        }
+        if (!isDeleting && j <= text[i].length) current = text[i].substring(0, j++);
+        else if (isDeleting && j >= 0) current = text[i].substring(0, j--);
 
         if (j === text[i].length) isDeleting = true;
         if (j === 0) { isDeleting = false; i++; }
 
         el.innerHTML = current + '<span class="cursor"></span>';
-      } else {
-        i = 0;
-      }
+      } else { i = 0; }
       setTimeout(type, 100);
     }
 
     type();
 
-    // Background particles
     const canvas = document.getElementById("bg");
     const ctx = canvas.getContext("2d");
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
     let particles = [];
-
-    for (let i = 0; i < 80; i++) {
+    for (let i = 0; i < 60; i++) {
       particles.push({ x: Math.random()*canvas.width, y: Math.random()*canvas.height, r: Math.random()*2 });
     }
 
