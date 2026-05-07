@@ -112,7 +112,19 @@ background:#1a1a1a;padding:8px 14px;margin:5px;border-radius:20px;font-size:.75r
 /* CONTACT */
 .contact{text-align:center}
 .btn{
-background:var(--accent);color:#000;padding:12px 25px;border-radius:25px;display:inline-block;margin-top:15px;font-weight:600
+background:var(--accent);
+color:#000;
+padding:12px 25px;
+border-radius:25px;
+display:inline-block;
+margin-top:15px;
+font-weight:600;
+transition:.3s
+}
+
+.btn:hover{
+transform:scale(1.05);
+box-shadow:0 0 15px #00ffae55;
 }
 
 footer{text-align:center;padding:25px;color:#666;font-size:.75rem}
@@ -196,7 +208,15 @@ footer{text-align:center;padding:25px;color:#666;font-size:.75rem}
 <section id="contact" class="contact">
 <h2>Contact</h2>
 <p>Let's build something meaningful together.</p>
-<a href="mailto:sayasrhapnelrey@gmail.com" class="btn">Email Me</a>
+
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=sayasrhapnelrey@gmail.com" target="_blank" class="btn">
+Send Email
+</a>
+
+<p style="margin-top:10px; font-size:0.9rem;">
+sayasrhapnelrey@gmail.com
+</p>
+
 <div style="margin-top:10px">
 <a href="https://www.facebook.com/Rhapnel.Sayas" target="_blank">Facebook</a>
 </div>
@@ -205,7 +225,9 @@ footer{text-align:center;padding:25px;color:#666;font-size:.75rem}
 <footer>© 2026 Rhapnel Sayas Developments</footer>
 
 <script>
-function toggleMenu(){document.getElementById('menu').classList.toggle('active')}
+function toggleMenu(){
+document.getElementById('menu').classList.toggle('active')
+}
 
 // typing
 const words=["Developer","Creator","Builder","Problem Solver"];
