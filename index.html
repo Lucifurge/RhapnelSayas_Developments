@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rhapnel Sayas Developments</title>
 
+<!-- Favicon -->
+<link rel="icon" href="logo.ico" type="image/x-icon">
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
 
 <style>
@@ -29,6 +32,14 @@ nav{
 position:fixed;width:100%;top:0;
 display:flex;justify-content:space-between;align-items:center;
 padding:15px 20px;background:#000c;backdrop-filter:blur(10px);z-index:10
+}
+
+.logo-nav{
+display:flex;align-items:center;gap:10px;
+}
+
+.logo-nav img{
+width:30px;height:30px;border-radius:6px;
 }
 
 .menu{display:flex;gap:18px}
@@ -56,6 +67,17 @@ canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1}
 
 .hero h1{font-size:clamp(2.5rem,8vw,4.5rem)}
 .typing{color:var(--accent);font-family:'JetBrains Mono';margin-top:10px}
+
+/* ABOUT */
+.about-container{
+display:flex;align-items:center;gap:30px;flex-wrap:wrap;
+}
+
+.about-container img{
+width:120px;border-radius:12px;border:1px solid #222;
+}
+
+.about-text{flex:1}
 
 /* CARDS */
 .projects-grid{
@@ -134,7 +156,10 @@ footer{text-align:center;padding:25px;color:#666;font-size:.75rem}
 <body>
 
 <nav>
-<div><strong>RS Dev</strong></div>
+<div class="logo-nav">
+<img src="logo.png" alt="logo">
+<strong>RS Dev</strong>
+</div>
 <div class="hamburger" onclick="toggleMenu()">☰</div>
 <div class="menu" id="menu">
 <a href="#about">About</a>
@@ -153,7 +178,12 @@ footer{text-align:center;padding:25px;color:#666;font-size:.75rem}
 
 <section id="about">
 <h2>About Me</h2>
-<p>I design and build clean, modern, and purpose-driven websites that create real impact.</p>
+<div class="about-container">
+<img src="logo.png" alt="logo">
+<div class="about-text">
+<p>I am Rhapnel Sayas, a developer focused on building clean, modern, and impactful digital experiences. I combine creativity, discipline, and technical skills to create websites that are not just functional—but meaningful.</p>
+</div>
+</div>
 </section>
 
 <section>
@@ -229,7 +259,6 @@ function toggleMenu(){
 document.getElementById('menu').classList.toggle('active')
 }
 
-// typing
 const words=["Developer","Creator","Builder","Problem Solver"];
 let i=0,j=0,cur="",del=false;
 function type(){
@@ -243,7 +272,6 @@ setTimeout(type,100);
 }
 type();
 
-// particles
 const canvas=document.getElementById("particles");
 const ctx=canvas.getContext("2d");
 canvas.width=window.innerWidth;
