@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rhapnel Sayas Developments</title>
 
-<!-- Favicon -->
 <link rel="icon" href="logo.ico" type="image/x-icon">
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
@@ -27,20 +26,14 @@ section{padding:90px 20px;max-width:1100px;margin:auto}
 h2{margin-bottom:15px;font-size:1.8rem}
 p{color:var(--muted)}
 
-/* NAV */
 nav{
 position:fixed;width:100%;top:0;
 display:flex;justify-content:space-between;align-items:center;
 padding:15px 20px;background:#000c;backdrop-filter:blur(10px);z-index:10
 }
 
-.logo-nav{
-display:flex;align-items:center;gap:10px;
-}
-
-.logo-nav img{
-width:30px;height:30px;border-radius:6px;
-}
+.logo-nav{display:flex;align-items:center;gap:10px}
+.logo-nav img{width:30px;height:30px;border-radius:6px}
 
 .menu{display:flex;gap:18px}
 nav a{color:var(--muted);font-size:.9rem;transition:.3s}
@@ -54,7 +47,6 @@ nav a:hover{color:var(--accent)}
 .hamburger{display:block}
 }
 
-/* HERO */
 .hero{
 height:100vh;
 display:flex;flex-direction:column;
@@ -68,18 +60,10 @@ canvas{position:absolute;top:0;left:0;width:100%;height:100%;z-index:-1}
 .hero h1{font-size:clamp(2.5rem,8vw,4.5rem)}
 .typing{color:var(--accent);font-family:'JetBrains Mono';margin-top:10px}
 
-/* ABOUT */
-.about-container{
-display:flex;align-items:center;gap:30px;flex-wrap:wrap;
-}
-
-.about-container img{
-width:120px;border-radius:12px;border:1px solid #222;
-}
-
+.about-container{display:flex;align-items:center;gap:30px;flex-wrap:wrap}
+.about-container img{width:120px;border-radius:12px;border:1px solid #222}
 .about-text{flex:1}
 
-/* CARDS */
 .projects-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
@@ -99,7 +83,6 @@ border-color:var(--accent);
 box-shadow:0 0 20px #00ffae33;
 }
 
-/* TEMPLATE GRID */
 .templates-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
@@ -110,13 +93,18 @@ gap:20px
 background:#111;border-radius:12px;overflow:hidden;border:1px solid #222;transition:.3s
 }
 
-.template-card img{width:100%;height:180px;object-fit:cover}
+.template-card img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-bottom:1px solid #222;
+}
 
 .template-card span{
- display:inline-block;
- margin-top:6px;
- font-size:0.7rem;
- color:var(--accent);
+display:inline-block;
+margin-top:6px;
+font-size:0.7rem;
+color:var(--accent);
 }
 
 .template-card:hover{
@@ -127,13 +115,11 @@ box-shadow:0 0 15px #00ffae22;
 
 .template-card div{padding:12px}
 
-/* TERMINAL */
 .terminal{
 background:#000;padding:15px;border-radius:10px;
 font-family:'JetBrains Mono';font-size:.8rem;color:#0f0
 }
 
-/* SKILLS */
 .skills span{
 background:linear-gradient(145deg,#1a1a1a,#111);
 padding:10px 16px;
@@ -152,8 +138,8 @@ transform:scale(1.1);
 box-shadow:0 0 10px #00ffae55;
 }
 
-/* CONTACT */
 .contact{text-align:center}
+
 .btn{
 background:var(--accent);
 color:#000;
@@ -178,7 +164,7 @@ footer{text-align:center;padding:25px;color:#666;font-size:.75rem}
 
 <nav>
 <div class="logo-nav">
-<img src="logo.png" alt="logo">
+<img src="logo.png">
 <strong>RS Dev</strong>
 </div>
 <div class="hamburger" onclick="toggleMenu()">☰</div>
@@ -200,9 +186,9 @@ footer{text-align:center;padding:25px;color:#666;font-size:.75rem}
 <section id="about">
 <h2>About Me</h2>
 <div class="about-container">
-<img src="logo.png" alt="logo">
+<img src="logo.png">
 <div class="about-text">
-<p>I am Rhapnel Sayas, a developer focused on building clean, modern, and impactful digital experiences. I combine creativity, discipline, and technical skills to create websites that are not just functional—but meaningful.</p>
+<p>I am Rhapnel Sayas, a developer focused on building clean, modern, and impactful digital experiences.</p>
 </div>
 </div>
 </section>
@@ -219,37 +205,12 @@ footer{text-align:center;padding:25px;color:#666;font-size:.75rem}
 <section id="projects">
 <h2>Projects & Services</h2>
 <div class="projects-grid">
-
-<div class="card">
-<h3>Website Development</h3>
-<p>Modern, responsive websites for businesses, personal brands, and ministries.</p>
-</div>
-
-<div class="card">
-<h3>Discord & Facebook Bots</h3>
-<p>Custom bots for automation, moderation, and engagement on Discord and Facebook.</p>
-</div>
-
-<div class="card">
-<h3>Website Automation</h3>
-<p>Automating tasks, forms, and workflows to make systems faster and more efficient.</p>
-</div>
-
-<div class="card">
-<h3>Cybersecurity Protection</h3>
-<p>Basic security setup to protect websites and systems from threats and attacks.</p>
-</div>
-
-<div class="card">
-<h3>Networking & Firewall Setup</h3>
-<p>Configuring secure networks and firewall protection for stability and safety.</p>
-</div>
-
-<div class="card">
-<h3>Personal AI Development</h3>
-<p>Building simple AI assistants and tools to improve productivity and workflows.</p>
-</div>
-
+<div class="card"><h3>Website Development</h3><p>Modern responsive websites</p></div>
+<div class="card"><h3>Discord & Facebook Bots</h3><p>Automation & moderation bots</p></div>
+<div class="card"><h3>Automation</h3><p>Workflow & system automation</p></div>
+<div class="card"><h3>Cybersecurity</h3><p>Basic protection & security setup</p></div>
+<div class="card"><h3>Networking</h3><p>Firewall & network setup</p></div>
+<div class="card"><h3>AI Tools</h3><p>Simple AI assistants</p></div>
 </div>
 </section>
 
@@ -258,37 +219,37 @@ footer{text-align:center;padding:25px;color:#666;font-size:.75rem}
 <div class="templates-grid">
 
 <div class="template-card">
-<img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=800&q=80" loading="lazy" onerror="this.src='https://via.placeholder.com/800x500?text=Website+Preview'">
+<img src="bus.webp">
 <div>
 <strong>Business Website</strong>
-<p>Modern company homepage layout</p>
+<p>Company homepage layout</p>
 <span>Homepage UI</span>
 </div>
 </div>
 
 <div class="template-card">
-<img src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=800&q=80" loading="lazy" onerror="this.src='https://via.placeholder.com/800x500?text=Portfolio+Preview'">
+<img src="por.webp">
 <div>
 <strong>Portfolio Website</strong>
-<p>Personal developer portfolio idea</p>
+<p>Personal portfolio design</p>
 <span>Personal Brand</span>
 </div>
 </div>
 
 <div class="template-card">
-<img src="https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=800&q=80" loading="lazy" onerror="this.src='https://via.placeholder.com/800x500?text=Startup+Preview'">
+<img src="star.webp">
 <div>
 <strong>Startup Landing</strong>
-<p>Product landing page layout</p>
+<p>Landing page concept</p>
 <span>Landing Page</span>
 </div>
 </div>
 
 <div class="template-card">
-<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80" loading="lazy" onerror="this.src='https://via.placeholder.com/800x500?text=Dashboard+UI'">
+<img src="admin.webp">
 <div>
-<strong>Dashboard UI</strong>
-<p>Admin panel / system interface</p>
+<strong>Admin Dashboard</strong>
+<p>System interface UI</p>
 <span>Web App UI</span>
 </div>
 </div>
@@ -298,46 +259,19 @@ footer{text-align:center;padding:25px;color:#666;font-size:.75rem}
 
 <section id="skills" class="skills">
 <h2>Skills</h2>
-
-<span>HTML</span>
-<span>CSS</span>
-<span>JavaScript</span>
-<span>React</span>
-<span>Node.js</span>
-
-<span>Python</span>
-<span>Ruby</span>
-<span>JSON</span>
-
-<span>Game Development</span>
-<span>Unity</span>
-<span>ActionScript</span>
-
-<span>Cybersecurity</span>
-<span>Networking</span>
-<span>Firewall</span>
-
-<span>Automation</span>
-<span>AI Development</span>
-<span>Bots</span>
-
+<span>HTML</span><span>CSS</span><span>JavaScript</span>
+<span>React</span><span>Node.js</span>
+<span>Python</span><span>Ruby</span><span>JSON</span>
+<span>Unity</span><span>Game Dev</span><span>Cybersecurity</span>
+<span>Networking</span><span>Automation</span><span>AI</span>
 </section>
 
 <section id="contact" class="contact">
 <h2>Contact</h2>
-<p>Let's build something meaningful together.</p>
-
 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sayasrhapnelrey@gmail.com" target="_blank" class="btn">
 Send Email
 </a>
-
-<p style="margin-top:10px; font-size:0.9rem;">
-sayasrhapnelrey@gmail.com
-</p>
-
-<div style="margin-top:10px">
-<a href="https://www.facebook.com/Rhapnel.Sayas" target="_blank">Facebook</a>
-</div>
+<p style="margin-top:10px;">sayasrhapnelrey@gmail.com</p>
 </section>
 
 <footer>© 2026 Rhapnel Sayas Developments</footer>
@@ -347,7 +281,7 @@ function toggleMenu(){
 document.getElementById('menu').classList.toggle('active')
 }
 
-const words=["Developer","Creator","Builder","Problem Solver"];
+const words=["Developer","Creator","Builder"];
 let i=0,j=0,cur="",del=false;
 function type(){
 let el=document.getElementById("typing");
